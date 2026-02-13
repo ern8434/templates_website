@@ -1,0 +1,340 @@
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --primary-color: #82b440;
+    /* Envato Green-ish */
+    --secondary-color: #6c757d;
+    --border-color: #dee2e6;
+    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #212529;
+        --text-color: #f8f9fa;
+        --card-bg: #343a40;
+        --primary-color: #82b440;
+        --secondary-color: #adb5bd;
+        --border-color: #495057;
+    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-input {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.card-title a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: var(--primary-color);
+}
+
+.card-meta {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.hero-section {
+    padding: 2rem 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-color) 100%);
+    border-bottom: 1px solid var(--border-color);
+    margin: 0 -1rem 1.5rem -1rem;
+    /* Offset container side padding only */
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.detail-view {
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .detail-view {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.description {
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.description p {
+    margin-bottom: 1.5rem;
+}
+
+.description ul,
+.description ol {
+    margin-bottom: 0;
+    padding-left: 2rem;
+}
+
+.description h3,
+.description h4,
+.description h5 {
+    margin: 2rem 0 1rem 0;
+}
+
+.description img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-color);
+}
+
+/* Main Menu */
+.main-menu {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    /* Separator from search row */
+    padding: 0.5rem 0;
+    overflow-x: auto;
+    /* Scrollable on mobile */
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 1rem;
+    /* Space from search row */
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.menu-list li {
+    display: inline-block;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.menu-list a:hover,
+.menu-list a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Dropdown Menu */
+.menu-list li {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 0.5rem;
+    /* Extends hover area to dropdown */
+    margin-bottom: -0.5rem;
+}
+
+.has-dropdown:hover .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown {
+    display: none;
+    /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    list-style: none;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    z-index: 1000;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+/* For hover effect to work, we need display block on hover, 
+   but for transition we need opacity/visibility.
+   Simple approach: use display none/block for functionality 
+   and basic transition if possible, 
+   or just display block.
+*/
+.has-dropdown:hover .dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    border: none;
+    color: var(--text-color);
+}
+
+.dropdown a:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--secondary-color);
+}
